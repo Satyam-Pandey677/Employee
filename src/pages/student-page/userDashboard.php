@@ -4,23 +4,23 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Purple Admin</title>
+    <title>Student Admin</title>
     <!-- plugins:css -->
-    <link rel="stylesheet" href="./assets/vendors/mdi/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="./assets/vendors/ti-icons/css/themify-icons.css">
-    <link rel="stylesheet" href="./assets/vendors/css/vendor.bundle.base.css">
-    <link rel="stylesheet" href="./assets/vendors/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="../../assets/vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="../../assets/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="../../assets/vendors/font-awesome/css/font-awesome.min.css">
     <!-- endinject -->
     <!-- Plugin css for this page -->
-    <link rel="stylesheet" href="./assets/vendors/font-awesome/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="./assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="../../assets/vendors/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href=".../../assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.css">
     <!-- End plugin css for this page -->
     <!-- inject:css -->
     <!-- endinject -->
     <!-- Layout styles -->
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
     <!-- End layout styles -->
-    <link rel="shortcut icon" href="./assets/images/favicon.png" />
+    <link rel="shortcut icon" href="../../assets/images/favicon.png" />
   </head>
   <body>
     <div class="container-scroller">
@@ -46,7 +46,7 @@
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item preview-item">
                   <div class="preview-thumbnail">
-                    <img src="assets/images/faces/face4.jpg" alt="image" class="profile-pic">
+                    <img src="../../assets/images/faces/face4.jpg" alt="image" class="profile-pic">
                   </div>
                   <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
                     <h6 class="preview-subject ellipsis mb-1 font-weight-normal">Mark send you a message</h6>
@@ -56,7 +56,7 @@
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item preview-item">
                   <div class="preview-thumbnail">
-                    <img src="assets/images/faces/face2.jpg" alt="image" class="profile-pic">
+                    <img src="../../assets/images/faces/face2.jpg" alt="image" class="profile-pic">
                   </div>
                   <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
                     <h6 class="preview-subject ellipsis mb-1 font-weight-normal">Cregh send you a message</h6>
@@ -66,7 +66,7 @@
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item preview-item">
                   <div class="preview-thumbnail">
-                    <img src="assets/images/faces/face3.jpg" alt="image" class="profile-pic">
+                    <img src="../../assets/images/faces/face3.jpg" alt="image" class="profile-pic">
                   </div>
                   <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
                     <h6 class="preview-subject ellipsis mb-1 font-weight-normal">Profile picture updated</h6>
@@ -80,7 +80,7 @@
             <li class="nav-item nav-profile dropdown">
                 <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
                   <div class="nav-profile-img">
-                    <img src="assets/images/faces/face1.jpg" alt="image">
+                    <img src="../../assets/images/faces/face1.jpg" alt="image">
                     <span class="availability-status online"></span>
                   </div>
                   <div class="nav-profile-text">
@@ -109,7 +109,7 @@
               <li class="nav-item nav-profile">
                 <a href="#" class="nav-link">
                   <div class="nav-profile-image">
-                    <img src="./assets/images/faces/face1.jpg" alt="profile" />
+                    <img src="../../assets/images/faces/face1.jpg" alt="profile" />
                     <span class="login-status online"></span>
                     <!--change to offline or busy as needed-->
                   </div>
@@ -121,7 +121,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./userDashboard.html">
+                <a class="nav-link" href="./userDashboard.php">
                   <span class="menu-title">Dashboard</span>
                   <i class="mdi mdi-home menu-icon"></i>
                   <!-- <i class="mdi mdi-contacts menu-icon"></i> -->
@@ -129,7 +129,7 @@
               </li>
   
               <li class="nav-item">
-                <a class="nav-link" href="./pages/student page/studentDetails.html">
+                <a class="nav-link" href="./studentDetails.php">
                   <span class="menu-title"> STUDENT DETAILS </span>
                   <i class="mdi mdi-home menu-icon"></i>
                   <!-- <i class="mdi mdi-contacts menu-icon"></i> -->
@@ -137,7 +137,7 @@
               </li>
   
               <li class="nav-item">
-                <a class="nav-link" href="./pages/student page/studentCertificate.html">
+                <a class="nav-link" href="studentCertificate.php">
                   <span class="menu-title"> STUDENT APPLY FOR SERVICES </span>
                   <i class="mdi mdi-home menu-icon"></i>
                   <!-- <i class="mdi mdi-contacts menu-icon"></i> -->
@@ -292,21 +292,21 @@
     </div>
     <!-- container-scroller -->
     <!-- plugins:js -->
-    <script src="./assets/vendors/js/vendor.bundle.base.js"></script>
+    <script src="../../assets/vendors/js/vendor.bundle.base.js"></script>
     <!-- endinject -->
     <!-- Plugin js for this page -->
-    <script src="./assets/vendors/chart.js/chart.umd.js"></script>
-    <script src="./assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+    <script src="../../assets/vendors/chart.js/chart.umd.js"></script>
+    <script src="../../assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
     <!-- End plugin js for this page -->
     <!-- inject:js -->
-    <script src="./assets/js/off-canvas.js"></script>
-    <script src="./assets/js/misc.js"></script>
-    <script src="./assets/js/settings.js"></script>
-    <script src="./assets/js/todolist.js"></script>
-    <script src="./assets/js/jquery.cookie.js"></script>
+    <script src="../../assets/js/off-canvas.js"></script>
+    <script src="../../assets/js/misc.js"></script>
+    <script src="../../assets/js/settings.js"></script>
+    <script src="../../assets/js/todolist.js"></script>
+    <script src="../../assets/js/jquery.cookie.js"></script>
     <!-- endinject -->
     <!-- Custom js for this page -->
-    <script src="./assets/js/dashboard.js"></script>
+    <script src="../../assets/js/dashboard.js"></script>
     <!-- End custom js for this page -->
   </body>
 </html>

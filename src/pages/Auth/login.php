@@ -1,7 +1,41 @@
+<?php
+    session_start();
+    include("config.php");
+    $msg = '';
+
+    if(isset($_POST['submit'])){
+        $email = mysqli_real_escape_string($conn, $_POST['email']);
+        $password = mysqli_real_escape_string($conn, $_POST['password']);
+
+        $select1 = "SELECT * FROM users WHERE email = '$email' AND password = '$password'";
+        $select_user = mysqli_query($conn, $select1) or die("Query Failed: " . mysqli_error($conn));
+
+        if(mysqli_num_rows($select_user) > 0){
+            $row1 = mysqli_fetch_assoc($select_user);
+
+            // Verify password
+            if ($row1['user_type'] == 'user') {
+                $_SESSION['user'] = $row1['email '];
+                $_SESSION['id'] = $row1['id'];
+                header("Location: ../student-page/userDashboard.php");
+            }else if($row1['user_type'] == 'admin'){
+                $_SESSION['admin'] = $row1['email'];
+                $_SESSION['id'] = $row1['id'];
+                header("Location: ../Admin-page/EmployeeDashboard.php");
+            }
+             else {
+                $msg = "Incorrect password!";
+            }
+        } else {
+            $msg = "User does not exist!";
+        }
+    }
+?>
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <title>Login</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="../../assets/vendors/mdi/css/materialdesignicons.min.css">
@@ -31,14 +65,12 @@
                     <input type="password" name="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password">
                   </div>
                   <div class="mt-3 d-grid gap-2">
-                  <button type="submit" name="submit" class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn">
-        SIGN IN
-    </button>
+                  <button type="submit" name="submit" class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn">SIGN IN</button>
                   </div>
                   <div class="my-2 d-flex justify-content-between align-items-center">
                     <a href="#" class="auth-link text-primary">Forgot password?</a>
                   </div>
-                  <div class="text-center mt-4 font-weight-light"> Don't have an account? <a href="register.html" class="text-primary">Create</a>
+                  <div class="text-center mt-4 font-weight-light"> Don't have an account? <a href="./register.php" class="text-primary">Create</a>
                   </div>
                 </form>
               </div>
@@ -65,48 +97,4 @@
   </body>
 </html>
 
-<?php
-session_start();
 
-$serverName = "127.0.0.1";
-$username = "root";
-$password = "";
-$database = "student";
-
-$conn = mysqli_connect($serverName, $username, $password, $database);
-
-if (!$conn) {
-    die("Database connection failed: " . mysqli_connect_error());
-}
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $email = trim($_POST["email"]);
-    $password = trim($_POST["password"]);
-
-    // Secure query using prepared statements
-    $sql = "SELECT * FROM users WHERE email = $email and $password";
-    $stmt = mysqli_prepare($conn, $sql);
-    mysqli_stmt_bind_param($stmt, "s", $email);
-    mysqli_stmt_execute($stmt);
-    $result = mysqli_stmt_get_result($stmt);
-
-    if (mysqli_num_rows($result) > 0) {
-        $user = mysqli_fetch_assoc($result);
-        
-        if (password_verify($password, $user['password'])) {
-            $_SESSION["user"] = $user["username"];
-            $_SESSION["email"] = $user["email"];
-            header("Location: dashboard.php");  // Redirect to dashboard
-            exit();
-        } else {
-            echo "<script>alert('Incorrect Password!'); window.location.href='login.php';</script>";
-        }
-    } else {
-        echo "<script>alert('User not found!'); window.location.href='login.html';</script>";
-    }
-
-    mysqli_stmt_close($stmt);
-}
-
-mysqli_close($conn);
-?>
